@@ -1,4 +1,11 @@
-﻿let callService url input =
+﻿#r @"packages\Hopac\lib\net45\Hopac.Platform.dll"
+#r @"packages\Hopac\lib\net45\Hopac.Core.dll"
+#r @"packages\Hopac\lib\net45\Hopac.dll"
+
+open Hopac
+open System
+
+let callService url input =
     job {
         Console.WriteLine (sprintf "Calling %s with %s..." url input)
         do! timeOutMillis 500
